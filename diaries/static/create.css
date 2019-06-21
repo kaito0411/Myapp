@@ -1,0 +1,67 @@
+body{
+    background-image: url('back.jpeg');
+  }
+  
+  h1 {
+      padding: 0.5em;/*文字周りの余白*/
+      color: #010101;/*文字色*/
+      background: #eaf3ff;/*背景色*/
+      border-bottom: solid 3px #516ab6;/*下線*/
+    }
+
+    .title {
+        position: static;
+        width: 760px;
+        margin: 40px 3% 40px;
+    }
+    .title input[type='text'] {
+        font: 15px/24px sans-serif;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0.3em;
+        transition: 0.3s;
+        letter-spacing: 1px;
+        color: #aaaaaa;
+        border: 5px solid #1b2538;
+        border-radius: 4px;
+    }
+    .ef input[type='text']:focus {
+        border: 5px solid #3b87eb;
+        outline: none;
+    }
+
+    .area{
+       
+        margin: 0px 3% 40px;
+    }
+
+    .time{
+        margin-left:650px;
+    }
+
+   input#submit{
+    width: 130px;
+    height: 50px;
+    margin-left:650px;
+    margin-top:0px;
+    
+   }
+
+   .btn-square-shadow {
+    text-align: right;
+    font-size:30px;
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+  }
+  .btn-square-shadow:active {
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: none;
+  }

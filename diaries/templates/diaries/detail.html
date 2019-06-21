@@ -1,0 +1,38 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>日記の詳細</title>
+    <link rel="stylesheet" type="text/css"
+    href="{% static 'detail.css' %}">
+　</head>
+<body>
+
+    <h1>日記の詳細</h1>
+
+    
+    <div class=bold>
+    {{diary.created | date:'Y-m-d '}}</div><br>
+    <br>
+    <div class=bold>
+    題名　:　</div>{{ diary.title}}</div><br>
+    <br>
+    <div class=bold>
+   本文　:　 </div>{{ diary.detail }}<br>
+    <br>
+
+    
+    <br>
+    <br>
+    <a href="{% url 'index' %}"class="btn-square-shadow">一覧へ</a>
+    <a href="{% url 'update' diary.id %}"class="btn-square-shadow" >変更</a>
+    <br>
+    <br>
+    <form action="{% url 'detail' diary.id %}" method = "POST">
+            {% csrf_token %}
+      <input id="delete" type="submit" value="消去"/>
+   
+</body>
+</html>

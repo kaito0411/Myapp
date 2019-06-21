@@ -1,0 +1,35 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>ページ2</title>
+    <link rel="stylesheet" type="text/css"
+    href="{% static 'index.css' %}">
+    </head>
+    <body>
+        <h1><center>日記の一覧</center></h1>
+        <table>
+            <tr>
+                <th>日付</th>
+                <th>タイトル</th>
+                <th>日記の詳細へ</th>
+                <th>日記の変更へ</th>
+            </tr>
+                {% for diary in diaries %}
+            <tr>
+                <td> {{diary.created | date:'Y-m-d '}}</td>
+                <td>{{ diary.title}}</td>
+               <td><a href="{% url 'detail' diary.id %}" >詳細</a></td>
+                <td><a href="{% url 'update' diary.id %}" >変更</a></td>
+                
+               
+            </tr>
+            {% endfor %}
+        </table>
+       <br>
+       <br>
+       <Div Align="right"><p><a href="{% url 'create' %}"class="btn-square-shadow">日記を書く</a></p></Div>
+    </body>
+    </html>

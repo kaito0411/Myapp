@@ -1,0 +1,31 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>登録ページ</title>
+    <link rel="stylesheet" type="text/css"
+    href="{% static 'create.css' %}">
+</head>
+<body>
+    <h1>日記の更新</h1>
+    <form action="{% url 'update' diary.id %}" method="POST">
+        {% csrf_token %}
+        <div class="title">
+        <label class="ef">
+        <input type="text" name="title" id="title"
+        placeholder="{{diary.title}}"  /></label></div>
+        <br>
+        <div class="area">
+            <textarea   name="detail"  rows="30" cols="105"></textarea></div>
+        <br>
+        <div class="time">
+        <input type="date" name="created" id="created" placeholder="日付"　value="{{diary.created | date:'Y-m-d '}}" />
+        </div>
+        <br>
+        <input id="submit"  type="submit" value="登録"/>
+    </form>
+    <a href="{% url 'index' %}" class="btn-square-shadow" >一覧に戻る</a>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>日記アプリ</title>
+    <link rel="stylesheet" type="text/css"
+    href="{% static 'top.css' %}">
+</head>
+    <body>
+    <h1>手作り日記</h1>
+
+    <img src="{% static "diary.png" %}" alt="トップ画像">
+
+    <a href="{% url 'index' %}" class="btn-square-shadow">日記の一覧へ</a>
+    <a href="{% url 'create' %}"class="btn-square-shadow">日記を書く</a>
+    </body>
+  </html>
